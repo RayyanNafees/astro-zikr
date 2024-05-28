@@ -1,19 +1,31 @@
 ---
 import Base from "@/layouts/base.astro";
+import quran from "@/data/quran.json";
+
+const randSurah = Math.floor(Math.random() * 114); // any random surah
+const randVerse = Math.floor(Math.random() * quran[randSurah].total_verses); // Random verse from random surah
+const surah = quran[randSurah];
+const verse = surah.verses[randVerse];
 ---
 
-<Base script="quran">
+<Base >
     <section class="home">
       <div class="container">
         <h1 class="text-center mt-5 p-3">Welcome to the Holy Quran website</h1>
 
         <p class="title h3 mb-1 mt-5">The Holy Quran</p>
-        <p class="text-muted" id="surahName"></p>
+        <p class="text-muted" id="surahName">
+          <div id="surahName">Surah {surah.name} - {surah.total_verses} Ayah</div>
+        </p>
         <p
           class="h3 ayah text-center p-3 border ayah-container"
           id="ayah"
           data-v-637fbfae
-        ></p>
+        >
+      
+        <span id="ayah">{verse.text}</span>
+          <span>({verse.id.toLocaleString("AR-EG")})</span> 
+      </p>
 
         <p class="title h3 mb-1">The Azkar</p>
         <p class="text-muted">Fragrance your tongue with the remembrance of God</p>
@@ -40,4 +52,5 @@ import Base from "@/layouts/base.astro";
           </div>
         </div>
       </div>
-    </section></Base>
+    </section>
+  </Base>

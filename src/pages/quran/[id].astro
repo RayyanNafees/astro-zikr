@@ -15,7 +15,7 @@ const surah = quran[+id - 1];
 
 if (!surah) return Astro.redirect("/quran");
 ---
-<Base noscript>
+<Base >
  <section class="surah mt-5">
     <div class="container text-center" id="surah">
 <h1 class="text-center mt-5 p-3">{surah.name}</h1>
