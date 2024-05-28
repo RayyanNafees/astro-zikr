@@ -1,6 +1,8 @@
-const modo = document.getElementById("modo");
-const html = document.getElementsByTagName("html");
-const navbar = document.getElementById("navbar");
+const modo = document.getElementById("modo") as HTMLDivElement;
+const html = document.getElementsByTagName(
+	"html",
+) as HTMLCollectionOf<HTMLHtmlElement>;
+const navbar = document.getElementById("navbar") as HTMLElement;
 
 modo.onclick = () => {
 	modo.classList.toggle("open");

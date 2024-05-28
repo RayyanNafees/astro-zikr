@@ -1,8 +1,10 @@
 ---
 import Base from "@/layouts/base.astro";
 import azkar from "@/data/zikr.json";
+import RepetitionBtn from "@/components/zkr-btn.astro";
+
 ---
-<Base >
+<Base title="Morning Adhkar" >
     <section class="morning">
       <div class="container text-center mt-5">
         <div class="text">
@@ -10,10 +12,7 @@ import azkar from "@/data/zikr.json";
           <p class="h4">There are 31 Zikr</p>
         </div>
         <div id="row">
-          {azkar.slice(0, 30+1).map(zikr => {
-            let {count} = zikr
-            const getCount = () => count
-            return (
+          {azkar.slice(0, 30+1).map(zikr => (
             <div class="item">
     
               <p class="text-start h5 m-2" style="border-bottom: 1px solid rgba(0,0,0,.125);">
@@ -22,15 +21,13 @@ import azkar from "@/data/zikr.json";
                     
               <p class="zekr">{zikr.zekr}</p>
 
-              <button onclick="count>0 ? count--:this.classList.add('done')">
-                Remaining itterations:
-                <span class="btnCount">{+getCount().toLocaleString() ||"done"}</span>
-              </button>
+                <RepetitionBtn count={+zikr.count} />
+
 
               <p class="text-start h5 m-2" style="border-top: 1px solid rgba(0,0,0,.125);">{zikr.reference}</p>
 
              </div>    
-          )})}
+          ))}
         </div>
       </div>
     </section>

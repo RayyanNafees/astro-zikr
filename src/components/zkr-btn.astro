@@ -1,0 +1,25 @@
+---
+export interface Props {
+  count: number
+}
+const {count=3} = Astro.props
+---
+<button>
+  Remaining itterations:
+  <span class="btnCount">{count}</span>
+</button>
+
+<script>
+  const countEl = document.querySelector(".btnCount") as HTMLElement
+  const getCount = () => +countEl.innerText
+  const setCount = (n: number|string) => countEl.innerText = `${n}`
+  const btn = document.querySelector('button') as HTMLElement
+
+  btn.onclick = () => {
+    const count = getCount()
+    count > 0  && setCount(count - 1)
+    if (count <=0)
+      btn.classList.add('done')
+  }
+
+</script>

@@ -25,6 +25,8 @@ bun dev
 ## Tech Stack
 
 - Astro
+- Bootstrap
+- Netlify
 
 ## How to support?
 
@@ -34,9 +36,9 @@ bun dev
 
 ## Resources
 
-- [Quran](https://github.com/marwanzayed-coder/quran/)
-- [Azkar](https://github.com/osamayy/azkar-db)
-- [Quran API](/src/data/quran.json)
+- [Quran & Azkar](https://github.com/marwanzayed-coder/quran/)
+- [Azkar DB](https://github.com/osamayy/azkar-db)
+- [Quran DB](/src/data/quran.json)
 
 ## License
 

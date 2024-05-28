@@ -1,35 +1,32 @@
 ---
 import Base from "@/layouts/base.astro";
 import azkar from "@/data/zikr.json";
+import RepetitionBtn from "@/components/zkr-btn.astro";
 ---
-<Base > <section class="morning">
-      <div class="container text-center mt-5">
-        <div class="text">
-          <h1 class="mb-4">Evening Azkar</h1>
-          <p class="h4">There are 30 Zikr</p>
-        </div>
-        <div id="row-evening">
-         {azkar.slice(31, 60+1).map(zikr => {
-            let {count} = zikr
-            const getCount = () => count
-            return (
-            <div class="item">
-    
-              <p class="text-start h5 m-2" style="border-bottom: 1px solid rgba(0,0,0,.125);">
-                Repetiton: {zikr.count.toLocaleString()}
-              </p>
-                    
-              <p class="zekr">{zikr.zekr}</p>
-
-              <button onclick="count>0 ? count--:this.classList.add('done')">
-                Remaining itterations:
-                <span class="btnCount">{+getCount().toLocaleString() ||"done"}</span>
-              </button>
-
-              <p class="text-start h5 m-2" style="border-top: 1px solid rgba(0,0,0,.125);">{zikr.reference}</p>
-
-             </div>    
-          )})}
-        </div>
+<Base title="Evening Adhkar" >
+  <section class="morning">
+    <div class="container text-center mt-5">
+      <div class="text">
+        <h1 class="mb-4">Evening Azkar</h1>
+        <p class="h4">There are 30 Zikr</p>
       </div>
-    </section></Base>
+      <div id="row-evening">
+        {azkar.slice(31, 60+1).map(zikr =>(
+          <div class="item">
+  
+            <p class="text-start h5 m-2" style="border-bottom: 1px solid rgba(0,0,0,.125);">
+              Repetiton: {zikr.count.toLocaleString()}
+            </p>
+                  
+            <p class="zekr">{zikr.zekr}</p>
+
+            <RepetitionBtn count={+zikr.count} />
+
+            <p class="text-start h5 m-2" style="border-top: 1px solid rgba(0,0,0,.125);">{zikr.reference}</p>
+
+            </div>    
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>
