@@ -21,7 +21,6 @@ import "../styles/main.css";
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
     <meta name="keywords" content="allah, quran, astro, azkar, zikr, adhkar, islam, muslim, dua, duas, zikrs, morning, evening, momin, surah, surat, sora, ruqia, ruqiyah, ruqia, shariyah, shariyat, sharia, law, ayat, ayah" />
-    <script src="../scripts/mode.ts"></script>
 
     <title>{title}</title>
     <ViewTransitions />
@@ -33,7 +32,9 @@ import "../styles/main.css";
 
     <Footer />
     <script>
-    import "bootstrap/dist/js/bootstrap.bundle.min.js";
+      import "bootstrap/dist/js/bootstrap.bundle.min.js";
+      import {changeTheme} from '@/scripts/mode.ts'
+      document.addEventListener("astro:after-swap", changeTheme);
     </script>
   </body>
 </html>
