@@ -1,0 +1,29 @@
+---
+import Base from "@/layouts/base.astro";
+import quran from "@/data/quran.json";
+import QuranIndex from "./index.astro";
+
+export const getStaticPaths = () =>
+	quran.map((surah) => ({
+		params: { id: surah.id.toString() },
+	}));
+
+const { id } = Astro.params;
+if (!id) return Astro.redirect("/quran");
+
+const surah = quran[+id - 1];
+
+if (!surah) return Astro.redirect("/quran");
+---
+<Base noscript>
+ <section class="surah mt-5">
+    <div class="container text-center" id="surah">
+<h1 class="text-center mt-5 p-3">{surah.name}</h1>
+{surah.verses.map(verse => 
+  <div class="h3">{`${verse.text} \ufd3f${verse.id.toLocaleString("AR-EG")}\ufd3e `	}</div>
+  
+  )
+}
+    </div>
+  </section>
+</Base>

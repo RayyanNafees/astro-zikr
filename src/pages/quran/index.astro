@@ -1,0 +1,21 @@
+---
+import Base from "@/layouts/base.astro";
+import quran from '@/data/quran.json'
+---
+<Base><section class="quran mt-3">
+      <div class="container">
+        <div class="row" id="quran">
+          {quran.map(surah =>(
+            <a 
+              href={`/quran/${surah.id}`}
+              data-name={surah.transliteration} 
+              id="surahBox" 
+              class="col item text-center">
+                <h2>{surah.id} - {surah.name}</h2>
+                <h4>Total Verse: {surah.total_verses}</h4>
+            </a>    
+          ))}
+        </div>
+      </div>
+    </section>
+  </Base>

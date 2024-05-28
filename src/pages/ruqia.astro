@@ -1,0 +1,25 @@
+---
+import Base from "@/layouts/base.astro";
+import azkar from "@/data/zikr.json";
+---
+
+<Base noscript> <section class="morning">
+      <div class="container text-center mt-5">
+        <div class="text">
+          <h1 class="mb-4">
+            Ruqyah is based on the Holy Quran and the Sunnah of the Prophet
+          </h1>
+          <p class="h4">
+            There are 32 authentic dhikr from the purified Sunnah of the Prophet and the Holy Qur'an
+          </p>
+        </div>
+        <div id="row-ruqia">
+          {azkar.slice(304, 304+32+1).map(zikr=> (<div class="item">
+                <p class="zekr">{zikr.zekr}</p>
+			          <p class="text-start h5 m-2" style="border-bottom: 1px solid rgba(0,0,0,.125);">{zikr.reference}</p>
+            </div>)
+          )}
+        </div>
+      </div>
+    </section>
+</Base

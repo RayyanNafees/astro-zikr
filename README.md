@@ -20,7 +20,7 @@ nodemon app
 ## Features
 
 - Display 1 Ayah on every visit to Home Page.
-- User can read 4 Types of Azkar (Morning, Evening, Roqia, Other Supplications).
+- User can read 4 Types of Azkar (Morning, Evening, ruqia, Other Supplications).
 
 ## Tech Stack
 

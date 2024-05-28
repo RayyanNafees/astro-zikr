@@ -1,0 +1,23 @@
+---
+import Base from "@/layouts/base.astro";
+import azkar from '@/data/zikr.json'
+---
+<Base noscript>
+ <section class="morning">
+      <div class="container text-center mt-5">
+        <div class="text">
+          <h1 class="mb-4">Other Azkar & Duas</h1>
+          <p class="h4">Azkar after waking up from sleep and Dua before putting on clothes....</p>
+        </div>
+        <div id="row-other">
+          {azkar.slice(61, 303+1).map(zikr =>(
+            <div class="item">
+              <p class="text-start h5 m-2" style="border-bottom: 1px solid rgba(0,0,0,.125);">{zikr.category}</p>
+              <p class="zekr">{zikr.zekr}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+</Base>

@@ -1,0 +1,35 @@
+---
+export interface Props {
+	title?: string;
+	noscript?: boolean;
+}
+
+const { title = "Azkar", noscript = false } = Astro.props;
+
+import Head from "../components/head.astro";
+import Header from "../components/header.astro";
+import Footer from "../components/footer.astro";
+import "bootstrap/dist/css/bootstrap.rtl.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
+import "../styles/main.css";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <Head title={title} />
+  <body dir="rtl">
+    <Header />
+
+    <slot />
+
+    <Footer />
+    {
+      !noscript && <script src="../scripts/quran.ts"></script>
+    }    
+    <script  src="../scripts/mode.ts"></script>
+    <script>
+      import "bootstrap/dist/js/bootstrap.bundle.min.js";
+    </script>
+  </body>
+</html>
+
