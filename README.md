@@ -1,20 +1,20 @@
-# Quran Karem
+# Astro Zikr
 
-[Open in Visual Studio Code](https://vscode.dev/github/marwanzayed-coder/quran)
+[Open in Visual Studio Code](https://github.dev/RayyanNafees/astro-zikr)
 
 ## Preview
 
-Preview Quran from [Here](https://quranweb.herokuapp.com/).
+Preview Quran from [Here](https://astro-zikr.netlify.app).
 
 ## Installation
 
-Quran requires [Node.js](https://nodejs.org/en/) to run.
+Quran requires [Bun](https://bun.sh/) (or Node.js) to run.
 
-Install the dependencies using *Node.js*.
+Install the dependencies using Bun
 
 ```sh
-npm i
-nodemon app
+bun i
+bun dev
 ```
 
 ## Features
@@ -24,20 +24,20 @@ nodemon app
 
 ## Tech Stack
 
-- HTML5, CSS3 and JavaScript for sure.
-- Material Design for Bootstrap5.
-- Express, EJS
+- Astro
 
 ## How to support?
 
-- If you face any error, Submit the issue from [Here](https://github.com/marwanzayed-coder/quran/issues).
+- If you face any error, Submit the issue.
 - If you can optimize code or add new features, Use Pull Requests.
-- Have a new idea? Contact me at [Portfolio](https://marwanzayed-coder.github.io/portfolio/)
+- Have a new idea? Contact me at [Portfolio](https://rayyannafees.github.io)
 
 ## Resources
 
+- [Quran](https://github.com/marwanzayed-coder/quran/)
 - [Azkar](https://github.com/osamayy/azkar-db)
-- [Quran API](https://quranweb.herokuapp.com/quran.json)
+- [Quran API](/src/data/quran.json)
 
 ## License
+
 Feel free to use any material.
